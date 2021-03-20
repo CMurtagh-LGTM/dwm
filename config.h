@@ -71,12 +71,14 @@ static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {"rofi", "-show", "drun"};
 static const char *termcmd[] = {"st", NULL};
-static const char *window_rofi[] = {"rofi", "-show", "window"};
+static const char *file_rofi[] = {"rofi", "-show", "file-browser"};
+static const char *note_rofi[] = {"rofi_notes"};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
-    {MODKEY, XK_o, spawn, {.v = window_rofi}},
+    {MODKEY, XK_o, spawn, {.v = file_rofi}},
+    {MODKEY, XK_i, spawn, {.v = note_rofi}},
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
